@@ -1,10 +1,16 @@
+## React seed
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### VSCode
+
+I strongly recommend that you use vscode, and have included a .vscode folder with some project settings that will help with linting and auto fixing to follow a code standard.
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -12,33 +18,62 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+#### `yarn build`
 
 Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It correctly bundles React in production mode and optimizes the build for the
+best performance.
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment)
+for more information.
 
-### `npm run eject`
+#### `yarn lint`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+While the create react app does have a linter, I've added eslint and an rc file
+so that you can lint as you go, in your IDE.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### `yarn unit:test`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Launches the Jest test runner in interactive watch mode.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
+for more information.
 
-## Learn More
+Unit tests are useful but you should be careful not to test the React library.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Interesting articles:
+- [Testing React](https://www.valentinog.com/blog/testing-react/)
+- [Why I stopped using snapshot testing](https://medium.com/@tomgold_48918/why-i-stopped-using-snapshot-testing-with-jest-3279fe41ffb2).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### `yarn sdd`
+
+Starts Styleguidist and opens the Cypress test suite.
+
+This is a very useful way to develop tests, documentation and components at the
+same time.
+
+#### `yarn sdd:start`
+
+Start developing in the styleguidist environment. This is where all component
+development should be done, rather than in the application view.
+
+Open http://localhost:6060 to view it in the browser.
+
+You should do this so that you focus on the structure and integrity of the component,
+and ignore it's parent layout completely. Stay focused on it's simplicity!
+
+#### `yarn sdd:build`
+
+If you ever wish to publish your styleguide, you can build it with this command.
+
+This could be useful if you wanted to send someone a static zip file, or maybe
+it could be useful to build before browser testing in CI.
+
+#### `yarn sdd:test`
+
+Opens the cypress test suite with styleguidist as the target.
+
+Styleguidist must be running.
