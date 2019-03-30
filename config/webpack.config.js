@@ -77,14 +77,8 @@ module.exports = function (webpackEnv) {
         ),
       },
       {
-        loader: require.resolve('typings-for-css-modules-loader'),
-        options: Object.assign({}, cssOptions, {
-          sourceMap: true,
-          modules: true,
-          namedExport: true,
-          localIdentName: '[local]___[hash:base64:5]',
-          camelCase: true,
-        }),
+        loader: require.resolve('css-loader'),
+        options: cssOptions,
       },
       {
         // Options for PostCSS as we reference these options twice

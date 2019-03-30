@@ -3,8 +3,6 @@ import React, {
   FunctionComponentElement,
 } from 'react';
 
-import { myButton } from './Button.module.css';
-
 interface Props {
   /** Here is a description about the onClick prop */
   onClick?: () => void;
@@ -17,7 +15,7 @@ interface Props {
  */
 const Button: FunctionComponent<Props> =
   ({ children, onClick }): FunctionComponentElement<Props> => (
-    <button className={myButton} onClick={onClick}>
+    <button className="my-button" onClick={onClick}>
       {children}
     </button>
   );
